@@ -1,0 +1,167 @@
+<title>EIS Sites Build Guide</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700;900&family=Noto+Sans+JP:wght@400;700&display=swap">
+<style>
+  :root {
+    --bg: #ffffff; --ink: #202124; --ink-2: #454a52; --rule: #dadce0; --card: #f6f8fb;
+    --blue: #1a5296; --blue-ink: #1a5296; --tint: #e8f0fe; --ok: #1e7a46; --ok-tint: #e6f4ea;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) { color-scheme: dark; --bg: #13171e; --ink: #e8eaed; --ink-2: #b3b9c2; --rule: #313844; --card: #1a2029; --blue-ink: #8ab4f8; --tint: #1e2c43; --ok: #81c995; --ok-tint: #173323; }
+  }
+  :root[data-theme="dark"] { color-scheme: dark; --bg: #13171e; --ink: #e8eaed; --ink-2: #b3b9c2; --rule: #313844; --card: #1a2029; --blue-ink: #8ab4f8; --tint: #1e2c43; --ok: #81c995; --ok-tint: #173323; }
+  body { background: var(--bg); color: var(--ink); font-family: Lato, 'Noto Sans JP', system-ui, sans-serif; }
+  .wrap { max-width: 880px; margin: 0 auto; padding-inline: 20px; padding-block: 36px 72px; }
+  .eyebrow { font-size: 12px; font-weight: 900; letter-spacing: .14em; text-transform: uppercase; color: var(--blue-ink); }
+  h1 { font-weight: 900; font-size: clamp(28px, 5vw, 40px); line-height: 1.1; margin: 8px 0 0; text-wrap: balance; }
+  .lead { font-size: 16px; line-height: 1.7; color: var(--ink-2); max-width: 44em; margin: 12px 0 0; }
+  .warn { margin-top: 18px; padding: 14px 18px; border-radius: 10px; background: var(--tint); font-size: 15px; line-height: 1.6; }
+  .progress { margin-top: 18px; font-size: 14px; font-weight: 700; color: var(--ink-2); }
+  .bar { height: 6px; border-radius: 3px; background: var(--rule); margin-top: 6px; overflow: hidden; }
+  .bar i { display: block; height: 100%; width: 0; background: var(--ok); transition: width .3s; }
+  details.step { border-top: 1px solid var(--rule); }
+  details.step:last-of-type { border-bottom: 1px solid var(--rule); }
+  summary { list-style: none; cursor: pointer; display: grid; grid-template-columns: 36px 1fr auto; gap: 12px; align-items: center; padding: 18px 0; }
+  summary::-webkit-details-marker { display: none; }
+  summary:focus-visible { outline: 3px solid var(--blue-ink); outline-offset: 2px; border-radius: 6px; }
+  .n { font-weight: 900; font-size: 22px; color: var(--blue-ink); font-variant-numeric: tabular-nums; }
+  .st { font-size: 18px; font-weight: 900; }
+  .meta { font-size: 13.5px; color: var(--ink-2); margin-top: 2px; }
+  .check { display: flex; align-items: center; gap: 6px; font-size: 14px; font-weight: 700; color: var(--ink-2); }
+  .check input { width: 18px; height: 18px; accent-color: #1e7a46; }
+  details.done .n, details.done .st { color: var(--ok); }
+  .body { padding: 0 0 24px 48px; }
+  @media (max-width: 560px) { .body { padding-left: 0; } summary { grid-template-columns: 28px 1fr; } .check { grid-column: 2; } }
+  h3 { font-size: 13px; font-weight: 900; letter-spacing: .1em; text-transform: uppercase; color: var(--ink-2); margin: 20px 0 8px; }
+  ol.how { margin: 0; padding-left: 20px; font-size: 15.5px; line-height: 1.65; display: flex; flex-direction: column; gap: 6px; }
+  ol.how code { font-size: 13.5px; background: var(--card); padding: 1px 5px; border-radius: 4px; }
+  .photos { display: grid; grid-template-columns: repeat(auto-fill, minmax(150px, 1fr)); gap: 12px; }
+  .ph { margin: 0; }
+  .ph img { width: 100%; aspect-ratio: 4 / 3; object-fit: cover; border-radius: 8px; background: var(--card); }
+  .ph figcaption { font-size: 12.5px; color: var(--ink-2); margin: 6px 0 4px; word-break: break-all; }
+  .chunks { display: flex; flex-direction: column; gap: 10px; }
+  .chunk { background: var(--card); border-radius: 10px; padding: 14px 16px; display: grid; grid-template-columns: 1fr auto; gap: 10px 16px; align-items: start; }
+  .chunk .txt { min-width: 0; font-size: 14.5px; line-height: 1.55; color: var(--ink-2); }
+  .chunk .txt .title { font-size: 20px; font-weight: 900; color: var(--ink); }
+  .chunk .txt .heading { font-size: 17px; font-weight: 900; color: var(--ink); }
+  .chunk .txt .sub { font-size: 15.5px; font-weight: 900; color: var(--ink); }
+  .chunk .txt .small { font-size: 12px; font-weight: 900; letter-spacing: .08em; text-transform: uppercase; color: var(--blue-ink); }
+  .chunk .txt > div + div { margin-top: 4px; }
+  .chunk textarea { grid-column: 1 / -1; width: 100%; height: 110px; font: 13px/1.4 ui-monospace, Menlo, monospace; border: 1px solid var(--rule); border-radius: 6px; background: var(--bg); color: var(--ink); padding: 8px; }
+  button.copy { font: inherit; font-size: 14px; font-weight: 900; color: #fff; background: #1a5296; border: 0; border-radius: 999px; padding: 9px 16px; cursor: pointer; white-space: nowrap; }
+  button.copy:hover { background: #0f3a6e; }
+  button.copy:focus-visible { outline: 3px solid var(--blue-ink); outline-offset: 2px; }
+  button.copy.ok { background: #1e7a46; }
+  button.small { font-size: 12.5px; padding: 6px 12px; }
+  a { color: var(--blue-ink); }
+  @media (prefers-reduced-motion: reduce) { .bar i { transition: none; } }
+</style>
+
+<div class="wrap">
+  <div class="eyebrow">Facility Improvements · Google Sites</div>
+  <h1>Собираем страницу из блоков Google Sites</h1>
+  <p class="lead">Так страница сама подстроится под телефон. Идите по шагам сверху вниз: у каждого шага есть подсказка, как сделать раскладку, кнопки «Copy» для текста и ссылки на фото. На всё уйдёт примерно 1–2 часа.</p>
+  <div class="warn"><b>Тему сайта не меняйте</b> (вкладка Themes справа): она действует на весь сайт школы. Используйте стили текста текущей темы (Title, Heading, Subheading, Normal text) и цвета секций Emphasis 1 / 2. Сначала удалите со страницы вставленные раньше блоки с кодом.</div>
+  <div class="progress"><span id="count">0</span> из <span id="total">0</span> шагов готово<div class="bar"><i id="bar"></i></div></div>
+  <div id="steps" style="margin-top: 22px;"></div>
+</div>
+
+<script id="data" type="application/json">__DATA__</script>
+<script>
+(function () {
+  var data = JSON.parse(document.getElementById('data').textContent);
+  var root = document.getElementById('steps');
+  var KEY = 'eis-guide-done';
+  var done = {};
+  try { done = JSON.parse(localStorage.getItem(KEY) || '{}') || {}; } catch (e) {}
+
+  function el(tag, cls, html) { var e = document.createElement(tag); if (cls) e.className = cls; if (html != null) e.innerHTML = html; return e; }
+  function esc(s) { return s.replace(/[&<>"]/g, function (c) { return { '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[c]; }); }
+
+  function flash(btn, label) {
+    var old = btn.dataset.label || btn.textContent;
+    btn.dataset.label = old; btn.textContent = label; btn.classList.add('ok');
+    setTimeout(function () { btn.textContent = old; btn.classList.remove('ok'); }, 2000);
+  }
+  function manual(btn, box, plain) {
+    var ta = box.querySelector('textarea');
+    if (!ta) { ta = el('textarea'); ta.readOnly = true; ta.value = plain; box.appendChild(ta); }
+    ta.focus(); ta.select(); btn.textContent = 'Скопируйте ↓';
+  }
+  function copyRich(btn, box, html, plain) {
+    try {
+      if (window.ClipboardItem && navigator.clipboard && navigator.clipboard.write) {
+        var item = new ClipboardItem({ 'text/html': new Blob([html], { type: 'text/html' }), 'text/plain': new Blob([plain], { type: 'text/plain' }) });
+        navigator.clipboard.write([item]).then(function () { flash(btn, 'Copied ✓'); }, function () {
+          navigator.clipboard.writeText(plain).then(function () { flash(btn, 'Copied ✓'); }, function () { manual(btn, box, plain); });
+        });
+      } else {
+        navigator.clipboard.writeText(plain).then(function () { flash(btn, 'Copied ✓'); }, function () { manual(btn, box, plain); });
+      }
+    } catch (e) { manual(btn, box, plain); }
+  }
+
+  function refresh() {
+    var n = Object.keys(done).filter(function (k) { return done[k]; }).length;
+    document.getElementById('count').textContent = n;
+    document.getElementById('total').textContent = data.sections.length;
+    document.getElementById('bar').style.width = (100 * n / data.sections.length) + '%';
+  }
+
+  data.sections.forEach(function (s, i) {
+    var d = el('details', 'step'); if (i === 0) d.open = true; if (done[i]) d.classList.add('done');
+    var sum = el('summary');
+    sum.appendChild(el('span', 'n', String(i + 1)));
+    var t = el('div'); t.appendChild(el('div', 'st', esc(s.title)));
+    t.appendChild(el('div', 'meta', 'Текстов: ' + s.chunks.length + (s.photos.length ? ' · фото: ' + s.photos.length : '')));
+    sum.appendChild(t);
+    var lab = el('label', 'check'); var cb = el('input'); cb.type = 'checkbox'; cb.id = 'done-' + i; cb.checked = !!done[i];
+    cb.addEventListener('click', function (e) { e.stopPropagation(); });
+    cb.addEventListener('change', function () {
+      done[i] = cb.checked; d.classList.toggle('done', cb.checked);
+      try { localStorage.setItem(KEY, JSON.stringify(done)); } catch (e) {}
+      refresh();
+    });
+    lab.appendChild(cb); lab.appendChild(document.createTextNode('Готово'));
+    lab.addEventListener('click', function (e) { e.stopPropagation(); });
+    sum.appendChild(lab); d.appendChild(sum);
+
+    var body = el('div', 'body');
+    body.appendChild(el('h3', null, 'Как собрать'));
+    var ol = el('ol', 'how'); s.steps.forEach(function (x) { ol.appendChild(el('li', null, x)); }); body.appendChild(ol);
+
+    if (s.photos.length) {
+      body.appendChild(el('h3', null, 'Фото · Insert → Images → Select → By URL'));
+      var grid = el('div', 'photos');
+      s.photos.forEach(function (p) {
+        var f = el('figure', 'ph');
+        var img = el('img'); img.src = p.file; img.alt = p.name; img.loading = 'lazy'; f.appendChild(img);
+        f.appendChild(el('figcaption', null, esc(p.name)));
+        var b = el('button', 'copy small', 'Copy URL'); b.type = 'button';
+        b.addEventListener('click', function () {
+          try { navigator.clipboard.writeText(p.url).then(function () { flash(b, 'Copied ✓'); }, function () { manual(b, f, p.url); }); } catch (e) { manual(b, f, p.url); }
+        });
+        f.appendChild(b); grid.appendChild(f);
+      });
+      body.appendChild(grid);
+    }
+
+    body.appendChild(el('h3', null, 'Текст'));
+    var list = el('div', 'chunks');
+    s.chunks.forEach(function (c) {
+      var box = el('div', 'chunk');
+      var txt = el('div', 'txt');
+      c.lines.forEach(function (l) { txt.appendChild(el('div', l[0], esc(l[1]))); });
+      box.appendChild(txt);
+      var b = el('button', 'copy', 'Copy'); b.type = 'button'; b.setAttribute('aria-label', 'Copy: ' + c.label);
+      b.addEventListener('click', function () { copyRich(b, box, c.html, c.plain); });
+      box.appendChild(b); list.appendChild(box);
+    });
+    body.appendChild(list);
+    d.appendChild(body); root.appendChild(d);
+  });
+
+  var tip = el('p', 'lead', 'Все фото одним архивом: <a href="' + data.zip + '" target="_blank" rel="noopener">eis-facility-photos.zip</a> (2,4 МБ). Если заголовок после вставки выглядит обычным текстом, выделите его и выберите стиль в панели над текстом.');
+  root.appendChild(tip);
+  refresh();
+})();
+</script>
