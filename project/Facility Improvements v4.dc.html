@@ -1,0 +1,427 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="" />
+<link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700;900&family=Noto+Sans+JP:wght@400;500;700&display=swap" rel="stylesheet" />
+<script src="./image-slot.js"></script>
+<style>
+  body { margin: 0; background: #ffffff; -webkit-font-smoothing: antialiased; }
+  a { color: #1a5296; }
+  a:hover { color: #0f3a6e; }
+  html { scroll-behavior: smooth; }
+</style>
+</helmet>
+
+<div style="font-family: Lato, 'Noto Sans JP', system-ui, sans-serif; color: #202124; background: #ffffff; padding: 0 24px 80px;">
+  <div style="max-width: 1080px; margin: 0 auto;">
+
+    <header style="padding: 48px 0 0;">
+      <div style="display: flex; flex-wrap: wrap; align-items: center; gap: 10px; font-size: 13px; font-weight: 900; letter-spacing: 0.14em; text-transform: uppercase; color: #1a5296;">
+        <span>Facility Development Plan 2026–2028</span>
+      </div>
+      <h1 style="font-weight: 900; font-size: clamp(38px, 6.4vw, 72px); line-height: 1.05; margin: 14px 0 0; letter-spacing: -0.02em; max-width: 12em; text-wrap: balance;">A better campus for every student</h1>
+      <div style="font-family: 'Noto Sans JP', Lato, sans-serif; font-weight: 700; font-size: clamp(18px, 2.4vw, 26px); color: #3c4043; margin-top: 12px;">EIS 施設改善プログラム</div>
+      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 320px), 1fr)); gap: 16px 48px; margin-top: 28px;">
+        <p style="font-size: 18px; line-height: 1.7; margin: 0; color: #3c4043; text-wrap: pretty;">An overview of the improvements made to our campus this year, the work currently underway, and the priorities we are planning for next. This page will be updated as each project is completed, and accompanies the school’s Facility Development Plan 2026–2028.</p>
+        <p style="font-family: 'Noto Sans JP', sans-serif; font-size: 16px; line-height: 1.9; margin: 0; color: #444746; text-wrap: pretty;">本年度に完了した校舎・施設の改善、現在進行中の工事、今後の整備計画についてまとめたページです。各工事の完了にあわせて随時更新いたします。</p>
+      </div>
+      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(160px, 1fr)); gap: 1px; margin-top: 36px; background: #0f3a6e; border-radius: 12px; overflow: hidden;">
+        <div style="background: #1a5296; color: #ffffff; padding: 24px 28px;">
+          <div style="font-weight: 900; font-size: clamp(40px, 5vw, 56px); line-height: 1;">20</div>
+          <div style="font-size: 14px; font-weight: 900; letter-spacing: 0.1em; text-transform: uppercase; margin-top: 10px;">Projects completed</div>
+          <div style="font-family: 'Noto Sans JP', sans-serif; font-size: 14px; margin-top: 2px;">完了</div>
+        </div>
+        <div style="background: #1a5296; color: #ffffff; padding: 24px 28px;">
+          <div style="font-weight: 900; font-size: clamp(40px, 5vw, 56px); line-height: 1;">10</div>
+          <div style="font-size: 14px; font-weight: 900; letter-spacing: 0.1em; text-transform: uppercase; margin-top: 10px;">In progress</div>
+          <div style="font-family: 'Noto Sans JP', sans-serif; font-size: 14px; margin-top: 2px;">進行中</div>
+        </div>
+        <div style="background: #1a5296; color: #ffffff; padding: 24px 28px;">
+          <div style="font-weight: 900; font-size: clamp(40px, 5vw, 56px); line-height: 1;">6</div>
+          <div style="font-size: 14px; font-weight: 900; letter-spacing: 0.1em; text-transform: uppercase; margin-top: 10px;">Planned next</div>
+          <div style="font-family: 'Noto Sans JP', sans-serif; font-size: 14px; margin-top: 2px;">今後の計画</div>
+        </div>
+      </div>
+    </header>
+
+    <nav style="position: sticky; top: 0; z-index: 20; background: #ffffff; margin-top: 40px; border-bottom: 1px solid #dadce0;">
+      <div style="display: flex; flex-wrap: wrap; gap: 4px 6px; padding: 12px 0;">
+        <a href="#message" style="font-size: 14px; font-weight: 700; text-decoration: none; color: #1a5296; padding: 8px 14px; border-radius: 999px; border: 1px solid #c6d4ea;" style-hover="background: #e8f0fe;">Message</a>
+        <a href="#completed" style="font-size: 14px; font-weight: 700; text-decoration: none; color: #1a5296; padding: 8px 14px; border-radius: 999px; border: 1px solid #c6d4ea;" style-hover="background: #e8f0fe;">Completed</a>
+        <a href="#learning" style="font-size: 14px; font-weight: 700; text-decoration: none; color: #1a5296; padding: 8px 14px; border-radius: 999px; border: 1px solid #c6d4ea;" style-hover="background: #e8f0fe;">Why it matters</a>
+        <a href="#progress" style="font-size: 14px; font-weight: 700; text-decoration: none; color: #1a5296; padding: 8px 14px; border-radius: 999px; border: 1px solid #c6d4ea;" style-hover="background: #e8f0fe;">In progress</a>
+        <a href="#future" style="font-size: 14px; font-weight: 700; text-decoration: none; color: #1a5296; padding: 8px 14px; border-radius: 999px; border: 1px solid #c6d4ea;" style-hover="background: #e8f0fe;">What’s next</a>
+      </div>
+    </nav>
+
+    <section id="message" style="padding: 72px 0 0; scroll-margin-top: 72px;">
+      <div style="display: flex; flex-wrap: wrap; gap: 40px 56px; align-items: flex-start;">
+        <div style="flex: 1 1 280px; min-width: 0; max-width: 380px;">
+          <image-slot id="v2-head-portrait" shape="rounded" radius="12" style="width: 100%; height: 440px;" placeholder="Photo of the Head of School"></image-slot>
+          <div style="margin-top: 14px; font-size: 17px; font-weight: 900;">Head of School</div>
+          <div style="font-size: 15px; color: #3c4043;">Enishi International School</div>
+        </div>
+        <div style="flex: 2 1 420px; min-width: 0;">
+          <div style="font-size: 13px; font-weight: 900; letter-spacing: 0.14em; text-transform: uppercase; color: #1a5296;">Message from the Head of School</div>
+          <div style="font-family: 'Noto Sans JP', sans-serif; font-weight: 500; font-size: 15px; color: #444746; margin-top: 4px;">校長からのメッセージ</div>
+          <blockquote style="margin: 22px 0 0; padding: 0; font-weight: 900; font-size: clamp(24px, 3vw, 32px); line-height: 1.3; color: #1a5296; text-wrap: pretty;">“Our approach is not simply to renovate facilities, but to consider how our physical environment can better support learning.”</blockquote>
+          <p style="font-size: 17px; line-height: 1.8; margin: 28px 0 0; color: #202124; text-wrap: pretty;">The quality of our physical environment plays an important role in the experience of our students and staff. During the past year, we have undertaken significant improvement work across our campus, ranging from classroom and shared-space upgrades to new student facilities, learning spaces and safety improvements.</p>
+          <p style="font-size: 17px; line-height: 1.8; margin: 16px 0 0; color: #202124; text-wrap: pretty;">Our approach is not simply to renovate facilities, but to consider how our physical environment can better support learning, student wellbeing, safety and a strong sense of community. Some projects have already been completed, others are currently underway, and several longer-term priorities have been identified for the coming years.</p>
+          <p style="font-size: 17px; line-height: 1.8; margin: 16px 0 0; color: #202124; text-wrap: pretty;">This plan brings these developments together within one framework and provides a basis for monitoring our progress and planning future investment.</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="completed" style="padding: 88px 0 0; scroll-margin-top: 72px;">
+      <div style="font-size: 13px; font-weight: 900; letter-spacing: 0.14em; text-transform: uppercase; color: #1a5296;">Completed this year ・ 完了した改善</div>
+      <h2 style="font-weight: 900; font-size: clamp(30px, 4.4vw, 48px); line-height: 1.1; margin: 10px 0 0; letter-spacing: -0.015em;">Twenty projects, finished</h2>
+      <p style="font-size: 17px; line-height: 1.7; max-width: 40em; margin: 14px 0 0; color: #3c4043; text-wrap: pretty;">From the front door to the classroom, here is what has changed across the Main Building, Early Years Building and Gym.</p>
+
+      <div style="margin-top: 56px; border-top: 2px solid #202124; padding-top: 18px; display: flex; flex-wrap: wrap; align-items: baseline; gap: 6px 16px;">
+        <span style="font-size: 15px; font-weight: 900; color: #1a5296;">01</span>
+        <h3 style="font-weight: 900; font-size: clamp(22px, 2.6vw, 28px); line-height: 1.2; margin: 0;">Welcome &amp; shared spaces</h3>
+        <span style="font-family: 'Noto Sans JP', sans-serif; font-size: 15px; color: #444746;">受付・共用スペース</span>
+      </div>
+      <div style="display: flex; flex-direction: column; gap: 64px; margin-top: 32px;">
+        <article style="min-width: 0;">
+          <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 300px), 1fr)); gap: 10px;">
+            <div style="position: relative; min-width: 0;"><image-slot id="v2-reception-before" shape="rounded" radius="10" style="width: 100%; height: clamp(260px, 36vw, 420px);" placeholder="Before photo"></image-slot><span style="position: absolute; top: 14px; left: 14px; pointer-events: none; background: #ffffff; color: #202124; font-size: 12px; font-weight: 900; letter-spacing: 0.12em; text-transform: uppercase; padding: 6px 11px; border-radius: 4px;">Before</span></div>
+            <div style="position: relative; min-width: 0;"><image-slot id="v2-reception-after" shape="rounded" radius="10" style="width: 100%; height: clamp(260px, 36vw, 420px);" placeholder="After photo"></image-slot><span style="position: absolute; top: 14px; left: 14px; pointer-events: none; background: #1a5296; color: #ffffff; font-size: 12px; font-weight: 900; letter-spacing: 0.12em; text-transform: uppercase; padding: 6px 11px; border-radius: 4px;">After</span></div>
+          </div>
+          <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 280px), 1fr)); gap: 8px 40px; margin-top: 20px;">
+            <h4 style="font-size: 24px; font-weight: 900; line-height: 1.25; margin: 0;">School Reception &amp; Entrance Renovation</h4>
+            <p style="font-size: 16.5px; line-height: 1.7; margin: 0; color: #3c4043; text-wrap: pretty;">The reception and main entrance area were redesigned to create a more welcoming, professional and functional first point of contact for students, families and visitors.</p>
+          </div>
+        </article>
+        <article style="min-width: 0; display: flex; flex-wrap: wrap; gap: 20px 40px; align-items: center;">
+          <div style="position: relative; flex: 3 1 380px; min-width: 0;"><image-slot id="v2-hub-after" shape="rounded" radius="10" style="width: 100%; height: clamp(280px, 38vw, 460px);" placeholder="Photo"></image-slot></div>
+          <div style="flex: 2 1 260px; min-width: 0;">
+            <h4 style="font-size: 24px; font-weight: 900; line-height: 1.25; margin: 0;">Community Hub Renovation</h4>
+            <p style="font-size: 16.5px; line-height: 1.7; margin: 10px 0 0; color: #3c4043; text-wrap: pretty;">The former playroom was comprehensively renovated, including flooring, walls, doors, lighting and the overall interior environment. It has been transformed into the Community Hub, providing a flexible space for students and the wider school community.</p>
+          </div>
+        </article>
+        <article style="min-width: 0;">
+          <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 300px), 1fr)); gap: 10px;">
+            <div style="position: relative; min-width: 0;"><image-slot id="v2-lounge-before" shape="rounded" radius="10" style="width: 100%; height: clamp(260px, 36vw, 420px);" placeholder="Before photo"></image-slot><span style="position: absolute; top: 14px; left: 14px; pointer-events: none; background: #ffffff; color: #202124; font-size: 12px; font-weight: 900; letter-spacing: 0.12em; text-transform: uppercase; padding: 6px 11px; border-radius: 4px;">Before</span></div>
+            <div style="position: relative; min-width: 0;"><image-slot id="v2-lounge-after" shape="rounded" radius="10" style="width: 100%; height: clamp(260px, 36vw, 420px);" placeholder="After photo"></image-slot><span style="position: absolute; top: 14px; left: 14px; pointer-events: none; background: #1a5296; color: #ffffff; font-size: 12px; font-weight: 900; letter-spacing: 0.12em; text-transform: uppercase; padding: 6px 11px; border-radius: 4px;">After</span></div>
+          </div>
+          <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 280px), 1fr)); gap: 8px 40px; margin-top: 20px;">
+            <h4 style="font-size: 24px; font-weight: 900; line-height: 1.25; margin: 0;">Student Lounge</h4>
+            <div style="min-width: 0;">
+              <p style="font-size: 16.5px; line-height: 1.7; margin: 0; color: #3c4043; text-wrap: pretty;">A dedicated Student Lounge was created with new furniture, giving students a comfortable place to relax and socialize during recess, lunch and after school. Further decoration and finishing touches are continuing.</p>
+              <div style="display: inline-block; font-size: 12.5px; font-weight: 700; color: #1a5296; background: #e8f0fe; border-radius: 4px; padding: 4px 10px; margin-top: 10px;">Completed – further enhancement underway</div>
+            </div>
+          </div>
+        </article>
+        <article style="min-width: 0;">
+          <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 300px), 1fr)); gap: 10px;">
+            <div style="position: relative; min-width: 0;"><image-slot id="v2-library-before" shape="rounded" radius="10" style="width: 100%; height: clamp(260px, 36vw, 420px);" placeholder="Before photo"></image-slot><span style="position: absolute; top: 14px; left: 14px; pointer-events: none; background: #ffffff; color: #202124; font-size: 12px; font-weight: 900; letter-spacing: 0.12em; text-transform: uppercase; padding: 6px 11px; border-radius: 4px;">Before</span></div>
+            <div style="position: relative; min-width: 0;"><image-slot id="v2-library-after" shape="rounded" radius="10" style="width: 100%; height: clamp(260px, 36vw, 420px);" placeholder="After photo"></image-slot><span style="position: absolute; top: 14px; left: 14px; pointer-events: none; background: #1a5296; color: #ffffff; font-size: 12px; font-weight: 900; letter-spacing: 0.12em; text-transform: uppercase; padding: 6px 11px; border-radius: 4px;">After</span></div>
+          </div>
+          <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 280px), 1fr)); gap: 8px 40px; margin-top: 20px;">
+            <h4 style="font-size: 24px; font-weight: 900; line-height: 1.25; margin: 0;">Library Environment Upgrade</h4>
+            <div style="min-width: 0;">
+              <p style="font-size: 16.5px; line-height: 1.7; margin: 0; color: #3c4043; text-wrap: pretty;">The library received new furniture and improvements to create a more comfortable and functional environment for reading, study and collaborative learning.</p>
+              <div style="display: inline-block; font-size: 12.5px; font-weight: 700; color: #1a5296; background: #e8f0fe; border-radius: 4px; padding: 4px 10px; margin-top: 10px;">Completed – ongoing development continues</div>
+            </div>
+          </div>
+        </article>
+      </div>
+      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 280px), 1fr)); gap: 24px 40px; margin-top: 40px;">
+        <div style="min-width: 0; border-top: 2px solid #1a5296; padding-top: 16px;">
+          <div style="font-size: 12px; font-weight: 900; letter-spacing: 0.12em; text-transform: uppercase; color: #1a5296;">Also completed</div>
+          <h4 style="font-size: 18px; font-weight: 900; margin: 8px 0 0;">Community Club Renovation</h4>
+          <p style="font-size: 15.5px; line-height: 1.65; margin: 6px 0 0; color: #3c4043; text-wrap: pretty;">The Community Club space was renovated and improved to provide a more functional and welcoming environment for school and community activities.</p>
+        </div>
+      </div>
+
+      <div style="margin-top: 88px; border-top: 2px solid #202124; padding-top: 18px; display: flex; flex-wrap: wrap; align-items: baseline; gap: 6px 16px;">
+        <span style="font-size: 15px; font-weight: 900; color: #1a5296;">02</span>
+        <h3 style="font-weight: 900; font-size: clamp(22px, 2.6vw, 28px); line-height: 1.2; margin: 0;">Classrooms &amp; teaching spaces</h3>
+        <span style="font-family: 'Noto Sans JP', sans-serif; font-size: 15px; color: #444746;">教室・学習環境</span>
+      </div>
+      <div style="display: flex; flex-direction: column; gap: 64px; margin-top: 32px;">
+        <article style="min-width: 0;">
+          <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 300px), 1fr)); gap: 10px;">
+            <div style="position: relative; min-width: 0;"><image-slot id="v2-paint-before" shape="rounded" radius="10" style="width: 100%; height: clamp(260px, 36vw, 420px);" placeholder="Before photo"></image-slot><span style="position: absolute; top: 14px; left: 14px; pointer-events: none; background: #ffffff; color: #202124; font-size: 12px; font-weight: 900; letter-spacing: 0.12em; text-transform: uppercase; padding: 6px 11px; border-radius: 4px;">Before</span></div>
+            <div style="position: relative; min-width: 0;"><image-slot id="v2-paint-after" shape="rounded" radius="10" style="width: 100%; height: clamp(260px, 36vw, 420px);" placeholder="After photo"></image-slot><span style="position: absolute; top: 14px; left: 14px; pointer-events: none; background: #1a5296; color: #ffffff; font-size: 12px; font-weight: 900; letter-spacing: 0.12em; text-transform: uppercase; padding: 6px 11px; border-radius: 4px;">After</span></div>
+          </div>
+          <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 280px), 1fr)); gap: 8px 40px; margin-top: 20px;">
+            <h4 style="font-size: 24px; font-weight: 900; line-height: 1.25; margin: 0;">Whole-School Interior Painting</h4>
+            <p style="font-size: 16.5px; line-height: 1.7; margin: 0; color: #3c4043; text-wrap: pretty;">Major interior painting was completed across the Main Building, Early Years Building and Gym, including classrooms, corridors and shared areas.</p>
+          </div>
+        </article>
+        <article style="min-width: 0; display: flex; flex-wrap: wrap; gap: 20px 40px; align-items: center;">
+          <div style="position: relative; flex: 3 1 380px; min-width: 0;"><image-slot id="v2-doors-after" shape="rounded" radius="10" style="width: 100%; height: clamp(280px, 38vw, 460px);" placeholder="Photo"></image-slot></div>
+          <div style="flex: 2 1 260px; min-width: 0;">
+            <h4 style="font-size: 24px; font-weight: 900; line-height: 1.25; margin: 0;">Main Building First-Floor Classroom Doors</h4>
+            <p style="font-size: 16.5px; line-height: 1.7; margin: 10px 0 0; color: #3c4043; text-wrap: pretty;">Classroom doors on the first floor of the Main Building were replaced as part of the wider facility improvement work.</p>
+          </div>
+        </article>
+        <article style="min-width: 0;" data-comment-anchor="40bdee4688-article">
+          <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 300px), 1fr)); gap: 10px;">
+            <div style="position: relative; min-width: 0;"><image-slot id="v2-floor-before" shape="rounded" radius="10" style="width: 100%; height: clamp(260px, 36vw, 420px);" placeholder="Before photo"></image-slot><span style="position: absolute; top: 14px; left: 14px; pointer-events: none; background: #ffffff; color: #202124; font-size: 12px; font-weight: 900; letter-spacing: 0.12em; text-transform: uppercase; padding: 6px 11px; border-radius: 4px;">Before</span></div>
+            <div style="position: relative; min-width: 0;"><image-slot id="v2-floor-after" shape="rounded" radius="10" style="width: 100%; height: clamp(260px, 36vw, 420px);" placeholder="After photo"></image-slot><span style="position: absolute; top: 14px; left: 14px; pointer-events: none; background: #1a5296; color: #ffffff; font-size: 12px; font-weight: 900; letter-spacing: 0.12em; text-transform: uppercase; padding: 6px 11px; border-radius: 4px;">After</span></div>
+          </div>
+          <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 280px), 1fr)); gap: 8px 40px; margin-top: 20px;">
+            <h4 style="font-size: 24px; font-weight: 900; line-height: 1.25; margin: 0;">Corridor &amp; Shared-Area Flooring</h4>
+            <p style="font-size: 16.5px; line-height: 1.7; margin: 0; color: #3c4043; text-wrap: pretty;">Hallway and shared-area floors across the school were professionally maintained and waxed, improving their condition and overall appearance.</p>
+          </div>
+        </article>
+      </div>
+      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 280px), 1fr)); gap: 24px 40px; margin-top: 40px;">
+        <div style="min-width: 0; border-top: 2px solid #1a5296; padding-top: 16px;">
+          <div style="font-size: 12px; font-weight: 900; letter-spacing: 0.12em; text-transform: uppercase; color: #1a5296;">Also completed</div>
+          <h4 style="font-size: 18px; font-weight: 900; margin: 8px 0 0;">Primary Classroom Furniture</h4>
+          <p style="font-size: 15.5px; line-height: 1.65; margin: 6px 0 0; color: #3c4043; text-wrap: pretty;">New student furniture was purchased for Primary classrooms to improve comfort, functionality and the overall learning environment.</p>
+        </div>
+        <div style="min-width: 0; border-top: 2px solid #1a5296; padding-top: 16px;">
+          <div style="font-size: 12px; font-weight: 900; letter-spacing: 0.12em; text-transform: uppercase; color: #1a5296;">Also completed</div>
+          <h4 style="font-size: 18px; font-weight: 900; margin: 8px 0 0;">Teacher Desks &amp; Workstations</h4>
+          <p style="font-size: 15.5px; line-height: 1.65; margin: 6px 0 0; color: #3c4043; text-wrap: pretty;">Teacher desks were replaced across the school, providing more consistent and functional classroom workspaces.</p>
+        </div>
+        <div style="min-width: 0; border-top: 2px solid #1a5296; padding-top: 16px;">
+          <div style="font-size: 12px; font-weight: 900; letter-spacing: 0.12em; text-transform: uppercase; color: #1a5296;">Also completed</div>
+          <h4 style="font-size: 18px; font-weight: 900; margin: 8px 0 0;">Classroom Whiteboards</h4>
+          <p style="font-size: 15.5px; line-height: 1.65; margin: 6px 0 0; color: #3c4043; text-wrap: pretty;">Whiteboards were replaced and upgraded across classrooms, with additional board space provided to better support teaching and learning.</p>
+        </div>
+      </div>
+
+      <div style="margin-top: 88px; border-top: 2px solid #202124; padding-top: 18px; display: flex; flex-wrap: wrap; align-items: baseline; gap: 6px 16px;">
+        <span style="font-size: 15px; font-weight: 900; color: #1a5296;">03</span>
+        <h3 style="font-weight: 900; font-size: clamp(22px, 2.6vw, 28px); line-height: 1.2; margin: 0;">Specialist learning spaces</h3>
+        <span style="font-family: 'Noto Sans JP', sans-serif; font-size: 15px; color: #444746;">専門教室</span>
+      </div>
+      <div style="display: flex; flex-direction: column; gap: 64px; margin-top: 32px;">
+        <article style="min-width: 0; display: flex; flex-wrap: wrap; gap: 20px 40px; align-items: center;">
+          <div style="position: relative; flex: 3 1 380px; min-width: 0;"><image-slot id="v2-arts-after" shape="rounded" radius="10" style="width: 100%; height: clamp(280px, 38vw, 460px);" placeholder="Photo"></image-slot></div>
+          <div style="flex: 2 1 260px; min-width: 0;">
+            <h4 style="font-size: 24px; font-weight: 900; line-height: 1.25; margin: 0;">Visual Arts Room</h4>
+            <p style="font-size: 16.5px; line-height: 1.7; margin: 10px 0 0; color: #3c4043; text-wrap: pretty;">A dedicated Visual Arts room was established with new furniture and resources, creating a specialist space for creative learning.</p>
+            <div style="display: inline-block; font-size: 12.5px; font-weight: 700; color: #1a5296; background: #e8f0fe; border-radius: 4px; padding: 4px 10px; margin-top: 10px;">Phase 1 completed</div>
+          </div>
+        </article>
+        <article style="min-width: 0; display: flex; flex-wrap: wrap-reverse; flex-direction: row-reverse; gap: 20px 40px; align-items: center;">
+          <div style="position: relative; flex: 3 1 380px; min-width: 0;"><image-slot id="v2-music-after" shape="rounded" radius="10" style="width: 100%; height: clamp(280px, 38vw, 460px);" placeholder="Photo"></image-slot></div>
+          <div style="flex: 2 1 260px; min-width: 0;">
+            <h4 style="font-size: 24px; font-weight: 900; line-height: 1.25; margin: 0;">Music Resources &amp; Instruments</h4>
+            <p style="font-size: 16.5px; line-height: 1.7; margin: 10px 0 0; color: #3c4043; text-wrap: pretty;">Significant investment was made in new musical instruments and resources to strengthen opportunities for students in music education.</p>
+          </div>
+        </article>
+      </div>
+
+      <div style="margin-top: 88px; border-top: 2px solid #202124; padding-top: 18px; display: flex; flex-wrap: wrap; align-items: baseline; gap: 6px 16px;">
+        <span style="font-size: 15px; font-weight: 900; color: #1a5296;">04</span>
+        <h3 style="font-weight: 900; font-size: clamp(22px, 2.6vw, 28px); line-height: 1.2; margin: 0;">Student wellbeing &amp; daily life</h3>
+        <span style="font-family: 'Noto Sans JP', sans-serif; font-size: 15px; color: #444746;">生徒の生活・ウェルビーイング</span>
+      </div>
+      <div style="display: flex; flex-direction: column; gap: 64px; margin-top: 32px;">
+        <article style="min-width: 0; display: flex; flex-wrap: wrap; gap: 20px 40px; align-items: center;">
+          <div style="position: relative; flex: 3 1 380px; min-width: 0;"><image-slot id="v2-couns-after" shape="rounded" radius="10" style="width: 100%; height: clamp(280px, 38vw, 460px);" placeholder="Photo"></image-slot></div>
+          <div style="flex: 2 1 260px; min-width: 0;">
+            <h4 style="font-size: 24px; font-weight: 900; line-height: 1.25; margin: 0;">School Counsellor Room Upgrade</h4>
+            <p style="font-size: 16.5px; line-height: 1.7; margin: 10px 0 0; color: #3c4043; text-wrap: pretty;">The counselling room was upgraded to provide students with a more comfortable, appropriate and confidential space for wellbeing and pastoral support.</p>
+          </div>
+        </article>
+      </div>
+      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 280px), 1fr)); gap: 24px 40px; margin-top: 40px;">
+        <div style="min-width: 0; border-top: 2px solid #1a5296; padding-top: 16px;" data-comment-anchor="7484e07885-article">
+          <div style="font-size: 12px; font-weight: 900; letter-spacing: 0.12em; text-transform: uppercase; color: #1a5296;">Phase 1 completed</div>
+          <h4 style="font-size: 18px; font-weight: 900; margin: 8px 0 0;">Bicycle Parking Area</h4>
+          <p style="font-size: 15.5px; line-height: 1.65; margin: 6px 0 0; color: #3c4043; text-wrap: pretty;">A dedicated bicycle parking area was established to provide safer and more organized bicycle storage for the school community.</p>
+        </div>
+        <div style="min-width: 0; border-top: 2px solid #1a5296; padding-top: 16px;">
+          <div style="font-size: 12px; font-weight: 900; letter-spacing: 0.12em; text-transform: uppercase; color: #1a5296;">Also completed</div>
+          <h4 style="font-size: 18px; font-weight: 900; margin: 8px 0 0;">Primary Student Lockers</h4>
+          <p style="font-size: 15.5px; line-height: 1.65; margin: 6px 0 0; color: #3c4043; text-wrap: pretty;">Locker facilities for Primary students were upgraded to improve organization and day-to-day student use of the campus.</p>
+        </div>
+        <div style="min-width: 0; border-top: 2px solid #1a5296; padding-top: 16px;">
+          <div style="font-size: 12px; font-weight: 900; letter-spacing: 0.12em; text-transform: uppercase; color: #1a5296;">Also completed</div>
+          <h4 style="font-size: 18px; font-weight: 900; margin: 8px 0 0;">Secondary Student Lockers</h4>
+          <p style="font-size: 15.5px; line-height: 1.65; margin: 6px 0 0; color: #3c4043; text-wrap: pretty;">New locker facilities were provided for Secondary students, giving students improved storage and organization during the school day.</p>
+        </div>
+      </div>
+
+      <div style="margin-top: 88px; border-top: 2px solid #202124; padding-top: 18px; display: flex; flex-wrap: wrap; align-items: baseline; gap: 6px 16px;">
+        <span style="font-size: 15px; font-weight: 900; color: #1a5296;">05</span>
+        <h3 style="font-weight: 900; font-size: clamp(22px, 2.6vw, 28px); line-height: 1.2; margin: 0;">Comfort, air quality &amp; staff facilities</h3>
+        <span style="font-family: 'Noto Sans JP', sans-serif; font-size: 15px; color: #444746;">空調・スタッフ施設</span>
+      </div>
+      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 280px), 1fr)); gap: 24px 40px; margin-top: 28px;">
+        <div style="min-width: 0; border-top: 2px solid #1a5296; padding-top: 16px;">
+          <div style="font-size: 12px; font-weight: 900; letter-spacing: 0.12em; text-transform: uppercase; color: #1a5296;">Completed</div>
+          <h4 style="font-size: 18px; font-weight: 900; margin: 8px 0 0;">Air-Conditioning Improvements</h4>
+          <p style="font-size: 15.5px; line-height: 1.65; margin: 6px 0 0; color: #3c4043; text-wrap: pretty;">Six air-conditioning units were installed or replaced across the school to improve comfort and environmental conditions.</p>
+        </div>
+        <div style="min-width: 0; border-top: 2px solid #1a5296; padding-top: 16px;">
+          <div style="font-size: 12px; font-weight: 900; letter-spacing: 0.12em; text-transform: uppercase; color: #1a5296;">Completed</div>
+          <h4 style="font-size: 18px; font-weight: 900; margin: 8px 0 0;">AC, Fan &amp; Filter Maintenance</h4>
+          <p style="font-size: 15.5px; line-height: 1.65; margin: 6px 0 0; color: #3c4043; text-wrap: pretty;">Air-conditioning systems, filters and fans across the school were professionally cleaned and serviced to support air quality and system performance.</p>
+        </div>
+        <div style="min-width: 0; border-top: 2px solid #1a5296; padding-top: 16px;">
+          <div style="font-size: 12px; font-weight: 900; letter-spacing: 0.12em; text-transform: uppercase; color: #1a5296;">Completed</div>
+          <h4 style="font-size: 18px; font-weight: 900; margin: 8px 0 0;">Staff Facilities Improvements</h4>
+          <p style="font-size: 15.5px; line-height: 1.65; margin: 6px 0 0; color: #3c4043; text-wrap: pretty;">A number of improvements were made to staff facilities, including improvements to the Staff Room kitchen and shared staff areas.</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="learning" style="margin-top: 96px; scroll-margin-top: 72px; background: #eef3fb; border-radius: 16px; padding: clamp(28px, 5vw, 56px);">
+      <div style="font-size: 13px; font-weight: 900; letter-spacing: 0.14em; text-transform: uppercase; color: #1a5296;">Why it matters ・ 改善が学びを支える理由</div>
+      <h2 style="font-weight: 900; font-size: clamp(28px, 4vw, 44px); line-height: 1.12; margin: 10px 0 0; letter-spacing: -0.015em;">How these improvements support learning</h2>
+      <p style="font-size: 17px; line-height: 1.7; max-width: 40em; margin: 14px 0 0; color: #3c4043; text-wrap: pretty;">Buildings do not teach, but they shape how well teaching lands. Here is how the groups of work above connect to what happens in a school day.</p>
+      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 280px), 1fr)); gap: 16px; margin-top: 32px;">
+        <div style="min-width: 0; background: #ffffff; border-radius: 10px; padding: 24px 26px;">
+          <div style="font-size: 28px; font-weight: 900; color: #1a5296; line-height: 1;">01</div>
+          <h3 style="font-size: 19px; font-weight: 900; margin: 14px 0 0;">A school that feels welcoming</h3>
+          <p style="font-size: 15.5px; line-height: 1.7; margin: 8px 0 0; color: #3c4043; text-wrap: pretty;">The redesigned reception and entrance change the first thirty seconds of a visit. Families, prospective parents and students arriving late or unwell all meet a space that is calm and clearly organized.</p>
+        </div>
+        <div style="min-width: 0; background: #ffffff; border-radius: 10px; padding: 24px 26px;">
+          <div style="font-size: 28px; font-weight: 900; color: #1a5296; line-height: 1;">02</div>
+          <h3 style="font-size: 19px; font-weight: 900; margin: 14px 0 0;">Somewhere to belong</h3>
+          <p style="font-size: 15.5px; line-height: 1.7; margin: 8px 0 0; color: #3c4043; text-wrap: pretty;">The Community Hub, Student Lounge and upgraded counselling room give students places to be outside lesson time — to rest, to talk with friends, or to speak privately with an adult. Students who feel settled take more academic risks.</p>
+        </div>
+        <div style="min-width: 0; background: #ffffff; border-radius: 10px; padding: 24px 26px;">
+          <div style="font-size: 28px; font-weight: 900; color: #1a5296; line-height: 1;">03</div>
+          <h3 style="font-size: 19px; font-weight: 900; margin: 14px 0 0;">Classrooms that hold attention</h3>
+          <p style="font-size: 15.5px; line-height: 1.7; margin: 8px 0 0; color: #3c4043; text-wrap: pretty;">Fresh paint, new doors, better-quality student and teacher furniture and a great deal more whiteboard space all reduce friction in an ordinary lesson. More board space means teachers can leave working thinking on display instead of wiping it away.</p>
+        </div>
+        <div style="min-width: 0; background: #ffffff; border-radius: 10px; padding: 24px 26px;">
+          <div style="font-size: 28px; font-weight: 900; color: #1a5296; line-height: 1;">04</div>
+          <h3 style="font-size: 19px; font-weight: 900; margin: 14px 0 0;">Room for specialists</h3>
+          <p style="font-size: 15.5px; line-height: 1.7; margin: 8px 0 0; color: #3c4043; text-wrap: pretty;">A dedicated Visual Arts room, new instruments and an improved library mean art, music and independent reading no longer have to borrow space or make do with shared equipment. Specialist subjects grow when they have a home.</p>
+        </div>
+        <div style="min-width: 0; background: #ffffff; border-radius: 10px; padding: 24px 26px;">
+          <div style="font-size: 28px; font-weight: 900; color: #1a5296; line-height: 1;">05</div>
+          <h3 style="font-size: 19px; font-weight: 900; margin: 14px 0 0;">Comfort and safety students notice</h3>
+          <p style="font-size: 15.5px; line-height: 1.7; margin: 8px 0 0; color: #3c4043; text-wrap: pretty;">New air-conditioning units, serviced filters and fans, lockers for every age group, organized bicycle parking and the move from pins to magnetic display boards address the practical conditions of the day — temperature, air, where a bag goes, whether a wall is safe to lean on.</p>
+        </div>
+        <div style="min-width: 0; background: #ffffff; border-radius: 10px; padding: 24px 26px;">
+          <div style="font-size: 28px; font-weight: 900; color: #1a5296; line-height: 1;">06</div>
+          <h3 style="font-size: 19px; font-weight: 900; margin: 14px 0 0;">Teachers well supported</h3>
+          <p style="font-size: 15.5px; line-height: 1.7; margin: 8px 0 0; color: #3c4043; text-wrap: pretty;">Consistent workstations and improved staff areas, including the Staff Room kitchen, matter to the quality of teaching in a way that is easy to overlook. Staff who have somewhere decent to prepare, mark and take a break bring more to the classroom.</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="progress" style="padding: 96px 0 0; scroll-margin-top: 72px;">
+      <div style="font-size: 13px; font-weight: 900; letter-spacing: 0.14em; text-transform: uppercase; color: #1a5296;">In progress ・ 進行中・近日予定の改善</div>
+      <h2 style="font-weight: 900; font-size: clamp(28px, 4vw, 44px); line-height: 1.12; margin: 10px 0 0; letter-spacing: -0.015em;">Underway and coming soon</h2>
+      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 300px), 1fr)); gap: 16px; margin-top: 32px;">
+        <div style="min-width: 0; border: 1px solid #dadce0; border-radius: 10px; padding: 22px 24px;">
+          <div style="display: inline-block; font-size: 12px; font-weight: 900; letter-spacing: 0.08em; text-transform: uppercase; color: #1a5296; background: #e8f0fe; border-radius: 999px; padding: 4px 11px;">Underway</div>
+          <h4 style="font-size: 18px; font-weight: 900; margin: 14px 0 0;">School-Wide Magnetic Bulletin Boards</h4>
+          <p style="font-size: 15.5px; line-height: 1.65; margin: 6px 0 0; color: #3c4043; text-wrap: pretty;">Bulletin boards throughout classrooms and common areas are being upgraded to magnetic display systems. Traditional pins are being removed to improve student safety while making it easier for students and teachers to display and update work.</p>
+        </div>
+        <div style="min-width: 0; border: 1px solid #dadce0; border-radius: 10px; padding: 22px 24px;">
+          <div style="display: inline-block; font-size: 12px; font-weight: 900; letter-spacing: 0.08em; text-transform: uppercase; color: #1a5296; background: #e8f0fe; border-radius: 999px; padding: 4px 11px;">Completing shortly</div>
+          <h4 style="font-size: 18px; font-weight: 900; margin: 14px 0 0;">School-Wide Curtain Replacement</h4>
+          <p style="font-size: 15.5px; line-height: 1.65; margin: 6px 0 0; color: #3c4043; text-wrap: pretty;">Curtains throughout classrooms and other school areas are being replaced to create a more consistent and improved learning environment. Completion is expected shortly.</p>
+        </div>
+        <div style="min-width: 0; border: 1px solid #dadce0; border-radius: 10px; padding: 22px 24px;">
+          <div style="display: inline-block; font-size: 12px; font-weight: 900; letter-spacing: 0.08em; text-transform: uppercase; color: #1a5296; background: #e8f0fe; border-radius: 999px; padding: 4px 11px;">Underway</div>
+          <h4 style="font-size: 18px; font-weight: 900; margin: 14px 0 0;">Student Lounge Enhancement</h4>
+          <p style="font-size: 15.5px; line-height: 1.65; margin: 6px 0 0; color: #3c4043; text-wrap: pretty;">The main Student Lounge space and furniture are already in place. Additional decoration and finishing touches are now being developed to make the space even more welcoming and student-friendly.</p>
+        </div>
+        <div style="min-width: 0; border: 1px solid #dadce0; border-radius: 10px; padding: 22px 24px;">
+          <div style="display: inline-block; font-size: 12px; font-weight: 900; letter-spacing: 0.08em; text-transform: uppercase; color: #1a5296; background: #e8f0fe; border-radius: 999px; padding: 4px 11px;">Within two months</div>
+          <h4 style="font-size: 18px; font-weight: 900; margin: 14px 0 0;">Early Years / Foundation Door Replacement</h4>
+          <p style="font-size: 15.5px; line-height: 1.65; margin: 6px 0 0; color: #3c4043; text-wrap: pretty;">Doors within the Early Years and Foundation areas are scheduled to be replaced within the next two months as part of the continuing facility improvement programme.</p>
+        </div>
+        <div style="min-width: 0; border: 1px solid #dadce0; border-radius: 10px; padding: 22px 24px;">
+          <div style="display: inline-block; font-size: 12px; font-weight: 900; letter-spacing: 0.08em; text-transform: uppercase; color: #1a5296; background: #e8f0fe; border-radius: 999px; padding: 4px 11px;">Planned</div>
+          <h4 style="font-size: 18px; font-weight: 900; margin: 14px 0 0;">Early Years Gate Replacement</h4>
+          <p style="font-size: 15.5px; line-height: 1.65; margin: 6px 0 0; color: #3c4043; text-wrap: pretty;">The Early Years entrance gate is currently planned for replacement, improving the functionality and quality of the entrance to the Early Years site.</p>
+        </div>
+        <div style="min-width: 0; border: 1px solid #dadce0; border-radius: 10px; padding: 22px 24px;">
+          <div style="display: inline-block; font-size: 12px; font-weight: 900; letter-spacing: 0.08em; text-transform: uppercase; color: #1a5296; background: #e8f0fe; border-radius: 999px; padding: 4px 11px;">Scheduled</div>
+          <h4 style="font-size: 18px; font-weight: 900; margin: 14px 0 0;">Emergency Announcement System</h4>
+          <p style="font-size: 15.5px; line-height: 1.65; margin: 6px 0 0; color: #3c4043; text-wrap: pretty;">The school's ageing emergency announcement system will be completely replaced with an upgraded system to strengthen school-wide and emergency communication.</p>
+        </div>
+        <div style="min-width: 0; border: 1px solid #dadce0; border-radius: 10px; padding: 22px 24px;">
+          <div style="display: inline-block; font-size: 12px; font-weight: 900; letter-spacing: 0.08em; text-transform: uppercase; color: #1a5296; background: #e8f0fe; border-radius: 999px; padding: 4px 11px;">December 2026</div>
+          <h4 style="font-size: 18px; font-weight: 900; margin: 14px 0 0;">Classroom Flooring Programme</h4>
+          <p style="font-size: 15.5px; line-height: 1.65; margin: 6px 0 0; color: #3c4043; text-wrap: pretty;">Classroom floors will undergo professional treatment and waxing, with almost all classrooms included where technically possible. This work is planned for December 2026.</p>
+        </div>
+        <div style="min-width: 0; border: 1px solid #dadce0; border-radius: 10px; padding: 22px 24px;">
+          <div style="display: inline-block; font-size: 12px; font-weight: 900; letter-spacing: 0.08em; text-transform: uppercase; color: #1a5296; background: #e8f0fe; border-radius: 999px; padding: 4px 11px;">Ongoing</div>
+          <h4 style="font-size: 18px; font-weight: 900; margin: 14px 0 0;">Library Books &amp; Resources</h4>
+          <p style="font-size: 15.5px; line-height: 1.65; margin: 6px 0 0; color: #3c4043; text-wrap: pretty;">The school is continuing to enrich the library collection through the addition of books and learning resources supporting student interests and curriculum needs.</p>
+        </div>
+        <div style="min-width: 0; border: 1px solid #dadce0; border-radius: 10px; padding: 22px 24px;">
+          <div style="display: inline-block; font-size: 12px; font-weight: 900; letter-spacing: 0.08em; text-transform: uppercase; color: #1a5296; background: #e8f0fe; border-radius: 999px; padding: 4px 11px;">Planned</div>
+          <h4 style="font-size: 18px; font-weight: 900; margin: 14px 0 0;">Library Charging Stations</h4>
+          <p style="font-size: 15.5px; line-height: 1.65; margin: 6px 0 0; color: #3c4043; text-wrap: pretty;">Student charging facilities are planned as part of the continuing library development, supporting the use of learning technology within the library.</p>
+        </div>
+        <div style="min-width: 0; border: 1px solid #dadce0; border-radius: 10px; padding: 22px 24px;">
+          <div style="display: inline-block; font-size: 12px; font-weight: 900; letter-spacing: 0.08em; text-transform: uppercase; color: #3c4043; background: #f1f3f4; border-radius: 999px; padding: 4px 11px;">Under review</div>
+          <h4 style="font-size: 18px; font-weight: 900; margin: 14px 0 0;">School Bus Cameras – Feasibility Review</h4>
+          <p style="font-size: 15.5px; line-height: 1.65; margin: 6px 0 0; color: #3c4043; text-wrap: pretty;">The school is exploring the installation of cameras on school buses to further strengthen student safety. The project remains subject to confirmation from the installation provider regarding technical feasibility.</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="future" style="margin-top: 96px; scroll-margin-top: 72px; background: #0f3a6e; color: #ffffff; border-radius: 16px; padding: clamp(28px, 5vw, 56px);">
+      <div style="font-size: 13px; font-weight: 900; letter-spacing: 0.14em; text-transform: uppercase; color: #ffffff;">What’s next ・ 今後の整備計画</div>
+      <h2 style="font-weight: 900; font-size: clamp(28px, 4vw, 44px); line-height: 1.12; margin: 10px 0 0; letter-spacing: -0.015em;">Future facility development priorities</h2>
+      <p style="font-size: 17px; line-height: 1.7; max-width: 40em; margin: 14px 0 0; color: #ffffff; text-wrap: pretty;">Where we intend to invest next. Timescales are indicative and will be confirmed as each project is scoped.</p>
+      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 280px), 1fr)); gap: 32px 40px; margin-top: 36px;">
+        <div style="min-width: 0; border-top: 1px solid #5d7fae; padding-top: 18px;">
+          <div style="font-size: 13px; font-weight: 900; letter-spacing: 0.1em; text-transform: uppercase; color: #ffffff;">2026–2028</div>
+          <h4 style="font-size: 20px; font-weight: 900; line-height: 1.3; margin: 8px 0 0;">Science Laboratory Modernization</h4>
+          <p style="font-size: 15.5px; line-height: 1.7; margin: 8px 0 0; color: #ffffff; text-wrap: pretty;">The science laboratory is planned for major modernization over the next two years to provide a stronger environment for practical, experimental and inquiry-based science learning.</p>
+        </div>
+        <div style="min-width: 0; border-top: 1px solid #5d7fae; padding-top: 18px;">
+          <div style="font-size: 13px; font-weight: 900; letter-spacing: 0.1em; text-transform: uppercase; color: #ffffff;">Planned</div>
+          <h4 style="font-size: 20px; font-weight: 900; line-height: 1.3; margin: 8px 0 0;">Early Years Garden Development</h4>
+          <p style="font-size: 15.5px; line-height: 1.7; margin: 8px 0 0; color: #ffffff; text-wrap: pretty;">A landscaped garden and flower area is planned for the Early Years site, creating a more attractive outdoor environment and additional opportunities for children to engage with nature.</p>
+        </div>
+        <div style="min-width: 0; border-top: 1px solid #5d7fae; padding-top: 18px;">
+          <div style="font-size: 13px; font-weight: 900; letter-spacing: 0.1em; text-transform: uppercase; color: #ffffff;">Planned</div>
+          <h4 style="font-size: 20px; font-weight: 900; line-height: 1.3; margin: 8px 0 0;">Shaded Outdoor Student Area</h4>
+          <p style="font-size: 15.5px; line-height: 1.7; margin: 8px 0 0; color: #ffffff; text-wrap: pretty;">The school plans to create a shaded area on the field so students can relax, socialize and use outdoor spaces more comfortably during warmer periods.</p>
+        </div>
+        <div style="min-width: 0; border-top: 1px solid #5d7fae; padding-top: 18px;">
+          <div style="font-size: 13px; font-weight: 900; letter-spacing: 0.1em; text-transform: uppercase; color: #ffffff;">Next academic year</div>
+          <h4 style="font-size: 20px; font-weight: 900; line-height: 1.3; margin: 8px 0 0;">Visual Arts Room Flooring</h4>
+          <p style="font-size: 15.5px; line-height: 1.7; margin: 8px 0 0; color: #ffffff; text-wrap: pretty;">The next stage of the Visual Arts room development will include upgrading its flooring during the next academic year.</p>
+        </div>
+        <div style="min-width: 0; border-top: 1px solid #5d7fae; padding-top: 18px;">
+          <div style="font-size: 13px; font-weight: 900; letter-spacing: 0.1em; text-transform: uppercase; color: #ffffff;">Next academic year</div>
+          <h4 style="font-size: 20px; font-weight: 900; line-height: 1.3; margin: 8px 0 0;">Bicycle Parking Upgrade</h4>
+          <p style="font-size: 15.5px; line-height: 1.7; margin: 8px 0 0; color: #ffffff; text-wrap: pretty;">The newly established bicycle parking area will be further developed during the next academic year to improve its capacity, organization and usability.</p>
+        </div>
+        <div style="min-width: 0; border-top: 1px solid #5d7fae; padding-top: 18px;">
+          <div style="font-size: 13px; font-weight: 900; letter-spacing: 0.1em; text-transform: uppercase; color: #ffffff;">Ongoing</div>
+          <h4 style="font-size: 20px; font-weight: 900; line-height: 1.3; margin: 8px 0 0;">Continued Library Development</h4>
+          <p style="font-size: 15.5px; line-height: 1.7; margin: 8px 0 0; color: #ffffff; text-wrap: pretty;">Library development will continue through additional books, technology, charging facilities, furniture and improvements to student study areas.</p>
+        </div>
+      </div>
+    </section>
+
+    <footer style="margin-top: 72px; display: flex; flex-wrap: wrap; gap: 24px 48px; align-items: flex-end; justify-content: space-between;">
+      <div style="flex: 1 1 360px; min-width: 0;">
+        <h2 style="font-weight: 900; font-size: clamp(22px, 2.8vw, 30px); line-height: 1.2; margin: 0;">Questions about the campus?</h2>
+        <p style="font-size: 16px; line-height: 1.7; margin: 8px 0 0; color: #3c4043;">If you have any questions about the campus, please contact the EIS Office.</p>
+        <p style="font-family: 'Noto Sans JP', sans-serif; font-size: 15px; line-height: 1.8; margin: 4px 0 0; color: #444746;">校舎・施設についてご不明な点がある場合は、EISオフィスまでお問い合わせください。</p>
+      </div>
+      <div style="display: flex; flex-direction: column; gap: 10px; align-items: flex-start;">
+        <a href="mailto:office@enishi.ac.jp" style="display: inline-block; background: #1a5296; color: #ffffff; font-size: 16px; font-weight: 900; text-decoration: none; padding: 14px 24px; border-radius: 999px;" style-hover="background: #0f3a6e; color: #ffffff;">office@enishi.ac.jp</a>
+        <div style="font-size: 15px; color: #3c4043;">Tel: 052-581-0700 ( 8:00-17:00 weekdays )</div>
+      </div>
+    </footer>
+    <div style="font-size: 13px; letter-spacing: 0.06em; text-transform: uppercase; font-weight: 700; color: #444746; margin-top: 32px; padding-top: 18px; border-top: 1px solid #dadce0;">Page updated September 2026</div>
+
+  </div>
+</div>
+</x-dc>
+</body>
+</html>
