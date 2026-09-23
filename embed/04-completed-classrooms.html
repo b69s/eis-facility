@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700;900&family=Noto+Sans+JP:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --blue: #1a5296;
+    --blue-dark: #0f3a6e;
+    --blue-tint: #e8f0fe;
+    --blue-wash: #eef3fb;
+    --blue-line: #c6d4ea;
+    --ink: #202124;
+    --ink-2: #3c4043;
+    --ink-3: #444746;
+    --rule: #dadce0;
+    --jp: 'Noto Sans JP', Lato, sans-serif;
+  }
+  * { box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  body { margin: 0; background: #ffffff; -webkit-font-smoothing: antialiased; }
+  a { color: var(--blue); }
+  a:hover { color: var(--blue-dark); }
+  img { display: block; }
+
+  .page { font-family: Lato, 'Noto Sans JP', system-ui, sans-serif; color: var(--ink); background: #ffffff; padding: 0 24px 80px; }
+  .wrap { max-width: 1080px; margin: 0 auto; }
+  .jp { font-family: var(--jp); }
+
+  .eyebrow { font-size: 13px; font-weight: 900; letter-spacing: 0.14em; text-transform: uppercase; color: var(--blue); }
+  .lede { font-size: 17px; line-height: 1.7; max-width: 40em; margin: 14px 0 0; color: var(--ink-2); text-wrap: pretty; }
+  h2.title { font-weight: 900; font-size: clamp(28px, 4vw, 44px); line-height: 1.12; margin: 10px 0 0; letter-spacing: -0.015em; }
+  section { scroll-margin-top: 72px; }
+
+  /* Header */
+  header { padding: 48px 0 0; }
+  h1 { font-weight: 900; font-size: clamp(38px, 6.4vw, 72px); line-height: 1.05; margin: 14px 0 0; letter-spacing: -0.02em; max-width: 12em; text-wrap: balance; }
+  .h1-jp { font-family: var(--jp); font-weight: 700; font-size: clamp(18px, 2.4vw, 26px); color: var(--ink-2); margin-top: 12px; }
+  .intro { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 320px), 1fr)); gap: 16px 48px; margin-top: 28px; }
+  .intro p { margin: 0; text-wrap: pretty; }
+  .intro .en { font-size: 18px; line-height: 1.7; color: var(--ink-2); }
+  .intro .jp { font-size: 16px; line-height: 1.9; color: var(--ink-3); }
+  .stats { display: grid; grid-template-columns: repeat(auto-fit, minmax(160px, 1fr)); gap: 1px; margin-top: 36px; background: var(--blue-dark); border-radius: 12px; overflow: hidden; }
+  .stat { background: var(--blue); color: #ffffff; padding: 24px 28px; }
+  .stat-num { font-weight: 900; font-size: clamp(40px, 5vw, 56px); line-height: 1; }
+  .stat-label { font-size: 14px; font-weight: 900; letter-spacing: 0.1em; text-transform: uppercase; margin-top: 10px; }
+  .stat-jp { font-family: var(--jp); font-size: 14px; margin-top: 2px; }
+
+  /* Sticky nav */
+  nav { position: sticky; top: 0; z-index: 20; background: #ffffff; margin-top: 40px; border-bottom: 1px solid var(--rule); }
+  nav .links { display: flex; flex-wrap: wrap; gap: 4px 6px; padding: 12px 0; }
+  nav a { font-size: 14px; font-weight: 700; text-decoration: none; color: var(--blue); padding: 8px 14px; border-radius: 999px; border: 1px solid var(--blue-line); }
+  nav a:hover { background: var(--blue-tint); color: var(--blue); }
+
+  /* Head of School message */
+  #message { padding: 72px 0 0; }
+  .message { display: flex; flex-wrap: wrap; gap: 40px 56px; align-items: flex-start; }
+  .portrait { flex: 1 1 280px; min-width: 0; max-width: 380px; }
+  .portrait img { width: 100%; height: 440px; object-fit: cover; border-radius: 12px; }
+  .portrait .name { margin-top: 14px; font-size: 17px; font-weight: 900; }
+  .portrait .org { font-size: 15px; color: var(--ink-2); }
+  .message-body { flex: 2 1 420px; min-width: 0; }
+  .message-body .sub-jp { font-family: var(--jp); font-weight: 500; font-size: 15px; color: var(--ink-3); margin-top: 4px; }
+  blockquote { margin: 22px 0 0; padding: 0; font-weight: 900; font-size: clamp(24px, 3vw, 32px); line-height: 1.3; color: var(--blue); text-wrap: pretty; }
+  .message-body p { font-size: 17px; line-height: 1.8; margin: 16px 0 0; color: var(--ink); text-wrap: pretty; }
+  .message-body blockquote + p { margin-top: 28px; }
+
+  /* Completed */
+  #completed { padding: 88px 0 0; }
+  h2.big { font-weight: 900; font-size: clamp(30px, 4.4vw, 48px); line-height: 1.1; margin: 10px 0 0; letter-spacing: -0.015em; }
+  .group-head { margin-top: 88px; border-top: 2px solid var(--ink); padding-top: 18px; display: flex; flex-wrap: wrap; align-items: baseline; gap: 6px 16px; }
+  .group-head.first { margin-top: 56px; }
+  .group-head .num { font-size: 15px; font-weight: 900; color: var(--blue); }
+  .group-head h3 { font-weight: 900; font-size: clamp(22px, 2.6vw, 28px); line-height: 1.2; margin: 0; }
+  .group-head .jp { font-size: 15px; color: var(--ink-3); }
+  .features { display: flex; flex-direction: column; gap: 64px; margin-top: 32px; }
+  .features h4 { font-size: 24px; font-weight: 900; line-height: 1.25; margin: 0; }
+  .features p { font-size: 16.5px; line-height: 1.7; margin: 0; color: var(--ink-2); text-wrap: pretty; }
+  .badge { display: inline-block; font-size: 12.5px; font-weight: 700; color: var(--blue); background: var(--blue-tint); border-radius: 4px; padding: 4px 10px; margin-top: 10px; }
+
+  /* Before / after pair */
+  .pair { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 300px), 1fr)); gap: 10px; }
+  .photo { position: relative; min-width: 0; margin: 0; }
+  .photo img { width: 100%; object-fit: cover; border-radius: 10px; background: #f1f3f4; }
+  .pair .photo img { height: clamp(260px, 36vw, 420px); }
+  .photo figcaption { position: absolute; top: 14px; left: 14px; font-size: 12px; font-weight: 900; letter-spacing: 0.12em; text-transform: uppercase; padding: 6px 11px; border-radius: 4px; background: #ffffff; color: var(--ink); }
+  .photo figcaption.after { background: var(--blue); color: #ffffff; }
+  .pair-text { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 280px), 1fr)); gap: 8px 40px; margin-top: 20px; }
+  .pair-text > div { min-width: 0; }
+
+  /* Single photo beside text */
+  .single { display: flex; flex-wrap: wrap; gap: 20px 40px; align-items: center; }
+  .single.flip { flex-direction: row-reverse; flex-wrap: wrap-reverse; }
+  .single .photo { flex: 3 1 380px; }
+  .single .photo img { height: clamp(280px, 38vw, 460px); }
+  .single .text { flex: 2 1 260px; min-width: 0; }
+  .single .text p { margin-top: 10px; }
+
+  /* Text-only cards */
+  .cards { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 280px), 1fr)); gap: 24px 40px; margin-top: 40px; }
+  .cards.top { margin-top: 28px; }
+  .card { min-width: 0; border-top: 2px solid var(--blue); padding-top: 16px; }
+  .card .tag { font-size: 12px; font-weight: 900; letter-spacing: 0.12em; text-transform: uppercase; color: var(--blue); }
+  .card h4 { font-size: 18px; font-weight: 900; margin: 8px 0 0; }
+  .card p { font-size: 15.5px; line-height: 1.65; margin: 6px 0 0; color: var(--ink-2); text-wrap: pretty; }
+
+  /* Why it matters */
+  #learning { margin-top: 96px; background: var(--blue-wash); border-radius: 16px; padding: clamp(28px, 5vw, 56px); }
+  .reasons { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 280px), 1fr)); gap: 16px; margin-top: 32px; }
+  .reason { min-width: 0; background: #ffffff; border-radius: 10px; padding: 24px 26px; }
+  .reason .n { font-size: 28px; font-weight: 900; color: var(--blue); line-height: 1; }
+  .reason h3 { font-size: 19px; font-weight: 900; margin: 14px 0 0; }
+  .reason p { font-size: 15.5px; line-height: 1.7; margin: 8px 0 0; color: var(--ink-2); text-wrap: pretty; }
+
+  /* In progress */
+  #progress { padding: 96px 0 0; }
+  .progress { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 300px), 1fr)); gap: 16px; margin-top: 32px; }
+  .item { min-width: 0; border: 1px solid var(--rule); border-radius: 10px; padding: 22px 24px; }
+  .pill { display: inline-block; font-size: 12px; font-weight: 900; letter-spacing: 0.08em; text-transform: uppercase; color: var(--blue); background: var(--blue-tint); border-radius: 999px; padding: 4px 11px; }
+  .pill.muted { color: var(--ink-2); background: #f1f3f4; }
+  .item h4 { font-size: 18px; font-weight: 900; margin: 14px 0 0; }
+  .item p { font-size: 15.5px; line-height: 1.65; margin: 6px 0 0; color: var(--ink-2); text-wrap: pretty; }
+
+  /* Future */
+  #future { margin-top: 96px; background: var(--blue-dark); color: #ffffff; border-radius: 16px; padding: clamp(28px, 5vw, 56px); }
+  #future .eyebrow, #future .lede { color: #ffffff; }
+  .future { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 280px), 1fr)); gap: 32px 40px; margin-top: 36px; }
+  .future > div { min-width: 0; border-top: 1px solid #5d7fae; padding-top: 18px; }
+  .future .when { font-size: 13px; font-weight: 900; letter-spacing: 0.1em; text-transform: uppercase; }
+  .future h4 { font-size: 20px; font-weight: 900; line-height: 1.3; margin: 8px 0 0; }
+  .future p { font-size: 15.5px; line-height: 1.7; margin: 8px 0 0; text-wrap: pretty; }
+
+  /* Footer */
+  footer { margin-top: 72px; display: flex; flex-wrap: wrap; gap: 24px 48px; align-items: flex-end; justify-content: space-between; }
+  footer .ask { flex: 1 1 360px; min-width: 0; }
+  footer h2 { font-weight: 900; font-size: clamp(22px, 2.8vw, 30px); line-height: 1.2; margin: 0; }
+  footer .ask p { font-size: 16px; line-height: 1.7; margin: 8px 0 0; color: var(--ink-2); }
+  footer .ask p.jp { font-size: 15px; line-height: 1.8; margin-top: 4px; color: var(--ink-3); }
+  footer .contact { display: flex; flex-direction: column; gap: 10px; align-items: flex-start; }
+  .button { display: inline-block; background: var(--blue); color: #ffffff; font-size: 16px; font-weight: 900; text-decoration: none; padding: 14px 24px; border-radius: 999px; }
+  .button:hover { background: var(--blue-dark); color: #ffffff; }
+  footer .tel { font-size: 15px; color: var(--ink-2); }
+  .updated { font-size: 13px; letter-spacing: 0.06em; text-transform: uppercase; font-weight: 700; color: var(--ink-3); margin-top: 32px; padding-top: 18px; border-top: 1px solid var(--rule); }
+
+  body { padding: 16px 0 24px; }
+  .page { padding: 0 24px; }
+  header, #message, #completed, #progress { padding-top: 0; }
+  #learning, #future { margin-top: 0; }
+  .block > .group-head:first-child { margin-top: 0; }
+</style>
+</head>
+<body>
+<div class="page"><div class="wrap block">
+<section id="completed"><div class="group-head">
+        <span class="num">02</span>
+        <h3>Classrooms &amp; teaching spaces</h3>
+        <span class="jp">教室・学習環境</span>
+      </div>
+      <div class="features">
+        <article>
+          <div class="pair">
+            <figure class="photo"><img src="https://b69s.github.io/eis-facility/images/paint-before.webp" alt="Interior before painting"><figcaption>Before</figcaption></figure>
+            <figure class="photo"><img src="https://b69s.github.io/eis-facility/images/paint-after.webp" alt="Interior after painting"><figcaption class="after">After</figcaption></figure>
+          </div>
+          <div class="pair-text">
+            <h4>Whole-School Interior Painting</h4>
+            <p>Major interior painting was completed across the Main Building, Early Years Building and Gym, including classrooms, corridors and shared areas.</p>
+          </div>
+        </article>
+        <article class="single">
+          <figure class="photo"><img src="https://b69s.github.io/eis-facility/images/doors-after.webp" alt="New first-floor classroom doors"></figure>
+          <div class="text">
+            <h4>Main Building First-Floor Classroom Doors</h4>
+            <p>Classroom doors on the first floor of the Main Building were replaced as part of the wider facility improvement work.</p>
+          </div>
+        </article>
+        <article>
+          <div class="pair">
+            <figure class="photo"><img src="https://b69s.github.io/eis-facility/images/floor-before.webp" alt="Corridor flooring before maintenance"><figcaption>Before</figcaption></figure>
+            <figure class="photo"><img src="https://b69s.github.io/eis-facility/images/floor-after.webp" alt="Corridor flooring after maintenance and waxing"><figcaption class="after">After</figcaption></figure>
+          </div>
+          <div class="pair-text">
+            <h4>Corridor &amp; Shared-Area Flooring</h4>
+            <p>Hallway and shared-area floors across the school were professionally maintained and waxed, improving their condition and overall appearance.</p>
+          </div>
+        </article>
+      </div>
+      <div class="cards">
+        <div class="card">
+          <div class="tag">Also completed</div>
+          <h4>Primary Classroom Furniture</h4>
+          <p>New student furniture was purchased for Primary classrooms to improve comfort, functionality and the overall learning environment.</p>
+        </div>
+        <div class="card">
+          <div class="tag">Also completed</div>
+          <h4>Teacher Desks &amp; Workstations</h4>
+          <p>Teacher desks were replaced across the school, providing more consistent and functional classroom workspaces.</p>
+        </div>
+        <div class="card">
+          <div class="tag">Also completed</div>
+          <h4>Classroom Whiteboards</h4>
+          <p>Whiteboards were replaced and upgraded across classrooms, with additional board space provided to better support teaching and learning.</p>
+        </div>
+      </div>
+
+      </section>
+</div></div>
+</body>
+</html>
